@@ -4,7 +4,7 @@
 #
 Name     : bleach
 Version  : 1.5.0
-Release  : 1
+Release  : 2
 URL      : https://pypi.python.org/packages/99/00/25a8fce4de102bf6e3cc76bc4ea60685b2fee33bde1b34830c70cacc26a7/bleach-1.5.0.tar.gz
 Source0  : https://pypi.python.org/packages/99/00/25a8fce4de102bf6e3cc76bc4ea60685b2fee33bde1b34830c70cacc26a7/bleach-1.5.0.tar.gz
 Summary  : An easy whitelist-based HTML-sanitizing tool.
@@ -13,9 +13,11 @@ License  : Apache-2.0
 Requires: bleach-python
 Requires: Sphinx
 Requires: flake8
+Requires: html5lib
 Requires: pytest
 Requires: six
 Requires: tox
+BuildRequires : html5lib
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : pluggy
@@ -47,12 +49,12 @@ python components for the bleach package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1487875886
+export SOURCE_DATE_EPOCH=1487880542
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1487875886
+export SOURCE_DATE_EPOCH=1487880542
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
