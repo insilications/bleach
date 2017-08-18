@@ -4,9 +4,9 @@
 #
 Name     : bleach
 Version  : 1.5.0
-Release  : 3
-URL      : https://pypi.python.org/packages/99/00/25a8fce4de102bf6e3cc76bc4ea60685b2fee33bde1b34830c70cacc26a7/bleach-1.5.0.tar.gz
-Source0  : https://pypi.python.org/packages/99/00/25a8fce4de102bf6e3cc76bc4ea60685b2fee33bde1b34830c70cacc26a7/bleach-1.5.0.tar.gz
+Release  : 4
+URL      : http://pypi.debian.net/bleach/bleach-1.5.0.tar.gz
+Source0  : http://pypi.debian.net/bleach/bleach-1.5.0.tar.gz
 Summary  : An easy whitelist-based HTML-sanitizing tool.
 Group    : Development/Tools
 License  : Apache-2.0
@@ -26,15 +26,13 @@ BuildRequires : pytest
 BuildRequires : python-dev
 BuildRequires : python3-dev
 BuildRequires : setuptools
+BuildRequires : six
 BuildRequires : tox
 BuildRequires : virtualenv
 
 %description
-======
 Bleach
-======
-.. image:: https://travis-ci.org/mozilla/bleach.png?branch=master
-:target: https://travis-ci.org/mozilla/bleach
+        ======
 
 %package python
 Summary: python components for the bleach package.
@@ -48,20 +46,27 @@ python components for the bleach package.
 %setup -q -n bleach-1.5.0
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1487880542
+export SOURCE_DATE_EPOCH=1503072706
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1487880542
+export SOURCE_DATE_EPOCH=1503072706
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+echo ----[ mark ]----
+cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
+echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
 
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python*/*
+/usr/lib/python2*/*
+/usr/lib/python3*/*
