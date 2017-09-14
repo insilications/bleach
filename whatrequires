@@ -1,4 +1,5 @@
 # This file contains recursive sources that require this package
-jupyter-0:1.0.0-6.src
-jupyter-notebook-gist-0:0.4.0-4.src
-nbconvert-0:5.3.1-8.src
+jupyter
+jupyter-notebook-gist
+nbconvert
+notebook
