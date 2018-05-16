@@ -4,7 +4,7 @@
 #
 Name     : bleach
 Version  : 2.1.3
-Release  : 13
+Release  : 14
 URL      : http://pypi.debian.net/bleach/bleach-2.1.3.tar.gz
 Source0  : http://pypi.debian.net/bleach/bleach-2.1.3.tar.gz
 Summary  : An easy safelist-based HTML-sanitizing tool.
