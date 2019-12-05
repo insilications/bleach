@@ -4,7 +4,7 @@
 #
 Name     : bleach
 Version  : 3.1.0
-Release  : 33
+Release  : 34
 URL      : https://files.pythonhosted.org/packages/78/5a/0df03e8735cd9c75167528299c738702437589b9c71a849489d00ffa82e8/bleach-3.1.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/78/5a/0df03e8735cd9c75167528299c738702437589b9c71a849489d00ffa82e8/bleach-3.1.0.tar.gz
 Summary  : An easy safelist-based HTML-sanitizing tool.
