@@ -1,0 +1,2 @@
+export prefix=/usr
+make -C po local

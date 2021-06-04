@@ -1,7 +1,7 @@
 # This file contains runtime requirements that get picked up but are
 # undesirable. One entry per line, no whitespace.
-tox
-pytest
-flake8
-Sphinx
-flake8
+#tox
+#pytest
+#flake8
+#Sphinx
+#flake8
